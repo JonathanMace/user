@@ -12,6 +12,7 @@ import (
 	"github.com/JonathanMace/user/db"
 	"github.com/JonathanMace/user/users"
 	stdopentracing "github.com/opentracing/opentracing-go"
+	xtr "github.com/JonathanMace/tracing-framework-go/xtrace/client"
 )
 
 // Endpoints collects the endpoints that comprise the Service.
@@ -48,6 +49,9 @@ func MakeEndpoints(s Service, tracer stdopentracing.Tracer) Endpoints {
 // MakeLoginEndpoint returns an endpoint via the given service.
 func MakeLoginEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
+		xtr.NewTask("Login")
+		xtr.Log("Hello!")
+		defer xtr.Log("Done")
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "login user")
 		span.SetTag("service", "user")
@@ -61,6 +65,9 @@ func MakeLoginEndpoint(s Service) endpoint.Endpoint {
 // MakeRegisterEndpoint returns an endpoint via the given service.
 func MakeRegisterEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
+		xtr.NewTask("Register")
+		xtr.Log("Hello!")
+		defer xtr.Log("Done")
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "register user")
 		span.SetTag("service", "user")
@@ -74,6 +81,9 @@ func MakeRegisterEndpoint(s Service) endpoint.Endpoint {
 // MakeUserGetEndpoint returns an endpoint via the given service.
 func MakeUserGetEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
+		xtr.NewTask("UserGet")
+		xtr.Log("Hello!")
+		defer xtr.Log("Done")
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "get users")
 		span.SetTag("service", "user")
@@ -113,6 +123,9 @@ func MakeUserGetEndpoint(s Service) endpoint.Endpoint {
 // MakeUserPostEndpoint returns an endpoint via the given service.
 func MakeUserPostEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
+		xtr.NewTask("UserPost")
+		xtr.Log("Hello!")
+		defer xtr.Log("Done")
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "post user")
 		span.SetTag("service", "user")
@@ -126,6 +139,9 @@ func MakeUserPostEndpoint(s Service) endpoint.Endpoint {
 // MakeAddressGetEndpoint returns an endpoint via the given service.
 func MakeAddressGetEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
+		xtr.NewTask("AddressGet")
+		xtr.Log("Hello!")
+		defer xtr.Log("Done")
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "get users")
 		span.SetTag("service", "user")
@@ -147,6 +163,9 @@ func MakeAddressGetEndpoint(s Service) endpoint.Endpoint {
 // MakeAddressPostEndpoint returns an endpoint via the given service.
 func MakeAddressPostEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
+		xtr.NewTask("AddressPost")
+		xtr.Log("Hello!")
+		defer xtr.Log("Done")
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "post address")
 		span.SetTag("service", "user")
@@ -160,6 +179,9 @@ func MakeAddressPostEndpoint(s Service) endpoint.Endpoint {
 // MakeUserGetEndpoint returns an endpoint via the given service.
 func MakeCardGetEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
+		xtr.NewTask("CardGet")
+		xtr.Log("Hello!")
+		defer xtr.Log("Done")
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "get cards")
 		span.SetTag("service", "user")
@@ -181,6 +203,9 @@ func MakeCardGetEndpoint(s Service) endpoint.Endpoint {
 // MakeCardPostEndpoint returns an endpoint via the given service.
 func MakeCardPostEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
+		xtr.NewTask("CardPost")
+		xtr.Log("Hello!")
+		defer xtr.Log("Done")
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "post card")
 		span.SetTag("service", "user")
@@ -194,6 +219,9 @@ func MakeCardPostEndpoint(s Service) endpoint.Endpoint {
 // MakeLoginEndpoint returns an endpoint via the given service.
 func MakeDeleteEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
+		xtr.NewTask("Delete")
+		xtr.Log("Hello!")
+		defer xtr.Log("Done")
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "delete entity")
 		span.SetTag("service", "user")
@@ -210,6 +238,9 @@ func MakeDeleteEndpoint(s Service) endpoint.Endpoint {
 // MakeHealthEndpoint returns current health of the given service.
 func MakeHealthEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
+		xtr.NewTask("Health")
+		xtr.Log("Hello!")
+		defer xtr.Log("Done")
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "health check")
 		span.SetTag("service", "user")

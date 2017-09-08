@@ -1,4 +1,4 @@
-package: github.com/microservices-demo/user
+package: github.com/JonathanMace/user
 import:
 - package: github.com/go-kit/kit
   version: v0.4.0
@@ -28,3 +28,8 @@ import:
 - package: github.com/weaveworks/common
   subpackages:
   - middleware
+- package: github.com/JonathanMace/tracing-framework-go
+  subpackages:
+  - xtrace/client
+  - local
+  - xtrace/internal/pubsub

@@ -1,4 +1,4 @@
-hash: ab1322ca6d24e40907af3a701959880ad721afa2e1b67eaf0c945bb74c9a5c30
+hash: daf11e0cbc7ab26b8b33c264048c8167dcdaaa958d0a1faf6df7061b19ab75bf
 updated: 2017-04-28T12:53:43.461401871+02:00
 imports:
 - name: github.com/afex/hystrix-go
@@ -21,6 +21,12 @@ imports:
   version: b86b1ec0dd4209a588dc1285cdd471e73525c0b3
   subpackages:
   - breaker
+- name: github.com/JonathanMace/tracing-framework-go
+  version: c88dda9bcebb603f2242178ead0c5f27041d7fcb
+  subpackages:
+  - xtrace/client
+  - local
+  - xtrace/internal/pubsub
 - name: github.com/eapache/go-xerial-snappy
   version: bb955e01b9346ac19dc29eb16586c90ded99a98c
 - name: github.com/eapache/queue

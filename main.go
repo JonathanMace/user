@@ -19,6 +19,7 @@ import (
 	zipkin "github.com/openzipkin/zipkin-go-opentracing"
 	stdprometheus "github.com/prometheus/client_golang/prometheus"
 	commonMiddleware "github.com/weaveworks/common/middleware"
+	xtr "github.com/JonathanMace/tracing-framework-go/xtrace/client"
 )
 
 var (
@@ -39,6 +40,9 @@ const (
 )
 
 func init() {
+	fmt.Println("Connecting to xtrace-server:5563")
+	xtr.Connect("xtrace-server:5563")
+	xtr.SetProcessName("User Microservice")
 	stdprometheus.MustRegister(HTTPLatency)
 	flag.StringVar(&zip, "zipkin", os.Getenv("ZIPKIN"), "Zipkin address")
 	flag.StringVar(&port, "port", "8084", "Port on which to run")
