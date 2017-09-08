@@ -1,6 +1,6 @@
 FROM golang:1.7-alpine
 ENV sourcesdir /go/src/github.com/JonathanMace/user/
-ENV MONGO_HOST mytestdb:27017
+ENV MONGO_HOST user-db
 ENV HATEAOS user
 ENV USER_DATABASE mongodb
 
@@ -12,5 +12,5 @@ RUN go run /go/src/github.com/JonathanMace/tracing-framework-go/cmd/modify-runti
 RUN go install -a std
 RUN go get -v github.com/Masterminds/glide && cd ${sourcesdir} && glide install && go install
 
-ENTRYPOINT user
-EXPOSE 8084
+ENTRYPOINT ["user", "-port=80"]
+EXPOSE 80
