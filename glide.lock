@@ -22,11 +22,12 @@ imports:
   subpackages:
   - breaker
 - name: github.com/JonathanMace/tracing-framework-go
-  version: c88dda9bcebb603f2242178ead0c5f27041d7fcb
+  version: 9a7d5911a29ba942f9a98b1bbdd7c9027b57c77b
   subpackages:
   - xtrace/client
   - local
   - xtrace/internal/pubsub
+  - xtrace/gokitutil
 - name: github.com/eapache/go-xerial-snappy
   version: bb955e01b9346ac19dc29eb16586c90ded99a98c
 - name: github.com/eapache/queue

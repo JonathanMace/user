@@ -33,3 +33,4 @@ import:
   - xtrace/client
   - local
   - xtrace/internal/pubsub
+  - xtrace/gokitutil
