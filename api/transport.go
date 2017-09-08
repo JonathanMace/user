@@ -17,6 +17,7 @@ import (
 	"github.com/JonathanMace/user/users"
 	stdopentracing "github.com/opentracing/opentracing-go"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	baggage "github.com/JonathanMace/tracing-framework-go/xtrace/gokitutil"
 )
 
 var (
@@ -29,6 +30,8 @@ func MakeHTTPHandler(e Endpoints, logger log.Logger, tracer stdopentracing.Trace
 	options := []httptransport.ServerOption{
 		httptransport.ServerErrorLogger(logger),
 		httptransport.ServerErrorEncoder(encodeError),
+		httptransport.ServerBefore(baggage.XTraceServerPreHandleInterceptor),
+		httptransport.ServerAfter(baggage.XTraceServerPostHandleInterceptor),
 	}
 
 	// GET /login       Login
