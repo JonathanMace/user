@@ -1,7 +1,7 @@
 #User Service
 [![Build Status](https://travis-ci.org/microservices-demo/user.svg?branch=master)](https://travis-ci.org/microservices-demo/user)
 [![Coverage Status](https://coveralls.io/repos/github/microservices-demo/user/badge.svg?branch=master)](https://coveralls.io/github/microservices-demo/user?branch=master)
-[![Go Report Card](https://goreportcard.com/badge/github.com/microservices-demo/user)](https://goreportcard.com/report/github.com/microservices-demo/user)
+[![Go Report Card](https://goreportcard.com/badge/github.com/JonathanMace/user)](https://goreportcard.com/report/github.com/JonathanMace/user)
 [![](https://images.microbadger.com/badges/image/weaveworksdemos/user.svg)](http://microbadger.com/images/weaveworksdemos/user "Get your own image badge on microbadger.com")
 
 This service covers user account storage, to include cards and addresses
