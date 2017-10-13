@@ -49,8 +49,7 @@ func MakeEndpoints(s Service, tracer stdopentracing.Tracer) Endpoints {
 // MakeLoginEndpoint returns an endpoint via the given service.
 func MakeLoginEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
-		xtr.NewTask("Login")
-		xtr.Log("Hello!")
+		xtr.Log("Login")
 		defer xtr.Log("Done")
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "login user")
@@ -65,8 +64,7 @@ func MakeLoginEndpoint(s Service) endpoint.Endpoint {
 // MakeRegisterEndpoint returns an endpoint via the given service.
 func MakeRegisterEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
-		xtr.NewTask("Register")
-		xtr.Log("Hello!")
+		xtr.Log("Register")
 		defer xtr.Log("Done")
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "register user")
@@ -81,8 +79,7 @@ func MakeRegisterEndpoint(s Service) endpoint.Endpoint {
 // MakeUserGetEndpoint returns an endpoint via the given service.
 func MakeUserGetEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
-		xtr.NewTask("UserGet")
-		xtr.Log("Hello!")
+		xtr.Log("UserGet")
 		defer xtr.Log("Done")
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "get users")
@@ -123,8 +120,7 @@ func MakeUserGetEndpoint(s Service) endpoint.Endpoint {
 // MakeUserPostEndpoint returns an endpoint via the given service.
 func MakeUserPostEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
-		xtr.NewTask("UserPost")
-		xtr.Log("Hello!")
+		xtr.Log("UserPost")
 		defer xtr.Log("Done")
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "post user")
@@ -139,8 +135,7 @@ func MakeUserPostEndpoint(s Service) endpoint.Endpoint {
 // MakeAddressGetEndpoint returns an endpoint via the given service.
 func MakeAddressGetEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
-		xtr.NewTask("AddressGet")
-		xtr.Log("Hello!")
+		xtr.Log("AddressGet")
 		defer xtr.Log("Done")
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "get users")
@@ -163,8 +158,7 @@ func MakeAddressGetEndpoint(s Service) endpoint.Endpoint {
 // MakeAddressPostEndpoint returns an endpoint via the given service.
 func MakeAddressPostEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
-		xtr.NewTask("AddressPost")
-		xtr.Log("Hello!")
+		xtr.Log("AddressPost")
 		defer xtr.Log("Done")
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "post address")
@@ -179,8 +173,7 @@ func MakeAddressPostEndpoint(s Service) endpoint.Endpoint {
 // MakeUserGetEndpoint returns an endpoint via the given service.
 func MakeCardGetEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
-		xtr.NewTask("CardGet")
-		xtr.Log("Hello!")
+		xtr.Log("CardGet")
 		defer xtr.Log("Done")
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "get cards")
@@ -203,8 +196,7 @@ func MakeCardGetEndpoint(s Service) endpoint.Endpoint {
 // MakeCardPostEndpoint returns an endpoint via the given service.
 func MakeCardPostEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
-		xtr.NewTask("CardPost")
-		xtr.Log("Hello!")
+		xtr.Log("CardPost")
 		defer xtr.Log("Done")
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "post card")
@@ -219,8 +211,7 @@ func MakeCardPostEndpoint(s Service) endpoint.Endpoint {
 // MakeLoginEndpoint returns an endpoint via the given service.
 func MakeDeleteEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
-		xtr.NewTask("Delete")
-		xtr.Log("Hello!")
+		xtr.Log("Delete")
 		defer xtr.Log("Done")
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "delete entity")
@@ -238,8 +229,7 @@ func MakeDeleteEndpoint(s Service) endpoint.Endpoint {
 // MakeHealthEndpoint returns current health of the given service.
 func MakeHealthEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
-		xtr.NewTask("Health")
-		xtr.Log("Hello!")
+		xtr.Log("Health")
 		defer xtr.Log("Done")
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "health check")

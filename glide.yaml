@@ -34,3 +34,9 @@ import:
   - local
   - xtrace/internal/pubsub
   - xtrace/gokitutil
+- package: github.com/tracingplane/tracingplane-go
+  subpackages:
+  - atomlayer
+  - tracingplane
+  - bdl
+  - baggageprotocol
