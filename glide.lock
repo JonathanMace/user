@@ -22,10 +22,11 @@ imports:
   subpackages:
   - breaker
 - name: github.com/JonathanMace/tracing-framework-go
-  version: 74522467f439e5cedf58b7172fc5cb3b27221c45
+  version: d99b41e7ebc4febac3aa84cc6b82652774556c2f
   subpackages:
   - xtrace/client
   - local
+  - localbaggage
   - xtrace/internal/pubsub
   - xtrace/gokitutil
 - name: github.com/tracingplane/tracingplane-go

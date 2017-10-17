@@ -32,6 +32,7 @@ import:
   subpackages:
   - xtrace/client
   - local
+  - localbaggage
   - xtrace/internal/pubsub
   - xtrace/gokitutil
 - package: github.com/tracingplane/tracingplane-go
