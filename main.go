@@ -20,6 +20,7 @@ import (
 	stdprometheus "github.com/prometheus/client_golang/prometheus"
 	commonMiddleware "github.com/weaveworks/common/middleware"
 	xtr "github.com/JonathanMace/tracing-framework-go/xtrace/client"
+	bot "github.com/JonathanMace/tracing-framework-go/opentracing"
 )
 
 var (
@@ -81,6 +82,7 @@ func main() {
 			tracer, err = zipkin.NewTracer(
 				zipkin.NewRecorder(collector, false, fmt.Sprintf("localhost:%v", port), ServiceName),
 			)
+			tracer = bot.Wrap(tracer.(zipkin.Tracer))
 			if err != nil {
 				logger.Log("err", err)
 				os.Exit(1)

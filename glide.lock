@@ -22,20 +22,22 @@ imports:
   subpackages:
   - breaker
 - name: github.com/JonathanMace/tracing-framework-go
-  version: d99b41e7ebc4febac3aa84cc6b82652774556c2f
+  version: b0df35a5827c519b71c912ac0aa1e5a25fce1368
   subpackages:
   - xtrace/client
   - local
   - localbaggage
   - xtrace/internal/pubsub
   - xtrace/gokitutil
+  - opentracing
 - name: github.com/tracingplane/tracingplane-go
-  version: 005f1cab6dd61551c66e26ead57f096e20523596
+  version: 5168e32d5282a61e48a0c88278751f0f2d331e83
   subpackages:
   - atomlayer
   - tracingplane
   - bdl
   - baggageprotocol
+  - examples
 - name: github.com/eapache/go-xerial-snappy
   version: bb955e01b9346ac19dc29eb16586c90ded99a98c
 - name: github.com/eapache/queue

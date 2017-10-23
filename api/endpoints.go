@@ -13,6 +13,8 @@ import (
 	"github.com/JonathanMace/user/users"
 	stdopentracing "github.com/opentracing/opentracing-go"
 	xtr "github.com/JonathanMace/tracing-framework-go/xtrace/client"
+	"github.com/tracingplane/tracingplane-go/examples"
+	"github.com/JonathanMace/tracing-framework-go/localbaggage"
 )
 
 // Endpoints collects the endpoints that comprise the Service.
@@ -137,6 +139,17 @@ func MakeAddressGetEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
 		xtr.Log("AddressGet")
 		defer xtr.Log("Done")
+
+		var zmd examples.ZipkinMetadata
+		baggage := localbaggage.Get()
+		baggage.ReadBag(2, &zmd)
+		if zmd.Tags == nil {
+			zmd.Tags = make(map[string](string))
+		}
+		zmd.Tags["AddressGetHostname"] = "compute10"
+		baggage.Set(2, &zmd)
+		localbaggage.Set(baggage)
+
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "get users")
 		span.SetTag("service", "user")
@@ -175,6 +188,17 @@ func MakeCardGetEndpoint(s Service) endpoint.Endpoint {
 	return func(ctx context.Context, request interface{}) (response interface{}, err error) {
 		xtr.Log("CardGet")
 		defer xtr.Log("Done")
+
+		var zmd examples.ZipkinMetadata
+		baggage := localbaggage.Get()
+		baggage.ReadBag(2, &zmd)
+		if zmd.Tags == nil {
+			zmd.Tags = make(map[string](string))
+		}
+		zmd.Tags["CardGetHostname"] = "compute10"
+		baggage.Set(2, &zmd)
+		localbaggage.Set(baggage)
+
 		var span stdopentracing.Span
 		span, ctx = stdopentracing.StartSpanFromContext(ctx, "get cards")
 		span.SetTag("service", "user")
